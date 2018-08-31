@@ -15,5 +15,9 @@ namespace ChatService
         string GetText(string value);
         [OperationContract]
         string GetName(string name);
+        [OperationContract]
+        int AddIntegerNumbers(int num1, int num2);
+        [OperationContract]
+        int SubtractIntegerNumbers(int num1, int num2);
     }
 }

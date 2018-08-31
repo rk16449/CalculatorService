@@ -18,5 +18,15 @@ namespace ChatService
         {
             return "Hello " + name + " welcome to the chat service";
         }
+
+        public int AddIntegerNumbers(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        public int SubtractIntegerNumbers(int num1, int num2)
+        {
+            return num1 - num2;
+        }
     }
 }
