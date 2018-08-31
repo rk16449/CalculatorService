@@ -18,6 +18,12 @@
   <wsdl:message name="IChatService_GetName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatService_AddIntegerNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIntegerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_AddIntegerNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIntegerNumbersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IChatService">
     <wsdl:operation name="GetText">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetText" message="tns:IChatService_GetText_InputMessage" />
@@ -26,6 +32,10 @@
     <wsdl:operation name="GetName">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetName" message="tns:IChatService_GetName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatService/GetNameResponse" message="tns:IChatService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIntegerNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/AddIntegerNumbers" message="tns:IChatService_AddIntegerNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/AddIntegerNumbersResponse" message="tns:IChatService_AddIntegerNumbers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IChatService" type="tns:IChatService">
@@ -41,6 +51,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetName">
       <soap:operation soapAction="http://tempuri.org/IChatService/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIntegerNumbers">
+      <soap:operation soapAction="http://tempuri.org/IChatService/AddIntegerNumbers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
