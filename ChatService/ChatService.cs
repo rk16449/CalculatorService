@@ -11,7 +11,12 @@ namespace ChatService
     {
         public string GetText(string value)
         {
-            return "You said" + value;
+            return "Service reads: " + value;
+        }
+
+        public string GetName(string name)
+        {
+            return "Hello " + name + " welcome to the chat service";
         }
     }
 }

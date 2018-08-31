@@ -13,5 +13,7 @@ namespace ChatService
     {
         [OperationContract]
         string GetText(string value);
+        [OperationContract]
+        string GetName(string name);
     }
 }
