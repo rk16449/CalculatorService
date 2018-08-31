@@ -8,74 +8,74 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ChatClient.ServiceReference2 {
+namespace ChatClient.CalculatorService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IChatService")]
-    public interface IChatService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CalculatorService.ICalculatorService")]
+    public interface ICalculatorService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetText", ReplyAction="http://tempuri.org/IChatService/GetTextResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetText", ReplyAction="http://tempuri.org/ICalculatorService/GetTextResponse")]
         string GetText(string value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetText", ReplyAction="http://tempuri.org/IChatService/GetTextResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetText", ReplyAction="http://tempuri.org/ICalculatorService/GetTextResponse")]
         System.Threading.Tasks.Task<string> GetTextAsync(string value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetName", ReplyAction="http://tempuri.org/IChatService/GetNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetName", ReplyAction="http://tempuri.org/ICalculatorService/GetNameResponse")]
         string GetName(string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetName", ReplyAction="http://tempuri.org/IChatService/GetNameResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetName", ReplyAction="http://tempuri.org/ICalculatorService/GetNameResponse")]
         System.Threading.Tasks.Task<string> GetNameAsync(string name);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/AddIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/AddIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/AddIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/AddIntegerNumbersResponse")]
         int AddIntegerNumbers(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/AddIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/AddIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/AddIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/AddIntegerNumbersResponse")]
         System.Threading.Tasks.Task<int> AddIntegerNumbersAsync(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/SubtractIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/SubtractIntegerNumbersResponse")]
         int SubtractIntegerNumbers(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/SubtractIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/SubtractIntegerNumbersResponse")]
         System.Threading.Tasks.Task<int> SubtractIntegerNumbersAsync(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/DivideIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/DivideIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/DivideIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/DivideIntegerNumbersResponse")]
         int DivideIntegerNumbers(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/DivideIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/DivideIntegerNumbersResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/DivideIntegerNumbers", ReplyAction="http://tempuri.org/ICalculatorService/DivideIntegerNumbersResponse")]
         System.Threading.Tasks.Task<int> DivideIntegerNumbersAsync(int num1, int num2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetRequests", ReplyAction="http://tempuri.org/IChatService/GetRequestsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetRequests", ReplyAction="http://tempuri.org/ICalculatorService/GetRequestsResponse")]
         int GetRequests();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetRequests", ReplyAction="http://tempuri.org/IChatService/GetRequestsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculatorService/GetRequests", ReplyAction="http://tempuri.org/ICalculatorService/GetRequestsResponse")]
         System.Threading.Tasks.Task<int> GetRequestsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceChannel : ChatClient.ServiceReference2.IChatService, System.ServiceModel.IClientChannel {
+    public interface ICalculatorServiceChannel : ChatClient.CalculatorService.ICalculatorService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ChatServiceClient : System.ServiceModel.ClientBase<ChatClient.ServiceReference2.IChatService>, ChatClient.ServiceReference2.IChatService {
+    public partial class CalculatorServiceClient : System.ServiceModel.ClientBase<ChatClient.CalculatorService.ICalculatorService>, ChatClient.CalculatorService.ICalculatorService {
         
-        public ChatServiceClient() {
+        public CalculatorServiceClient() {
         }
         
-        public ChatServiceClient(string endpointConfigurationName) : 
+        public CalculatorServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ChatServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public CalculatorServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ChatServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CalculatorServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ChatServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CalculatorServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
