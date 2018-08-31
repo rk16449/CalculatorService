@@ -37,13 +37,23 @@ namespace ChatClient
                 switch (input) {
                     case "1":
                         Console.WriteLine("You selected to add 2 numbers");
-                        Console.WriteLine("Number 1: ");
-                        int num1 = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Number 2: ");
-                        int num2 = int.Parse(Console.ReadLine());
-                        Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
-                        var returnedValue = proxy.AddIntegerNumbers(num1, num2);
-                        Console.WriteLine("The service replies with: " + returnedValue);
+
+                        try
+                        {
+                            Console.WriteLine("Number 1: ");
+                            int num1 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Number 2: ");
+                            int num2 = int.Parse(Console.ReadLine());
+                            Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
+                            var returnedValue = proxy.AddIntegerNumbers(num1, num2);
+                            Console.WriteLine("The service replies with: " + returnedValue);
+                        }
+                        catch(Exception ex)
+                        {
+                            Console.WriteLine("Invalid integer values");
+                        }
+                        
+                        
                         break;
                 }
 
