@@ -5,3 +5,8 @@
 Chat/Multiple Service using WCF
 
 A service which can do many things
+
+![Addition](../master/Screenshots/addition.JPG)
+
+
+![Divison](../master/Screenshots/divisionbyzero.JPG)
