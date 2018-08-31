@@ -2,7 +2,7 @@
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/rk16449/ChatService?branch=master)](https://bettercodehub.com/)
 
-Chat/Multiple Service using WCF
+Chat/Multiple Service using C#.NET/WCF
 
 A service which can do many things
 
