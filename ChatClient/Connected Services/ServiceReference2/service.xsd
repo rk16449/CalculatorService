@@ -43,4 +43,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SubtractIntegerNumbers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num1" type="xs:int" />
+        <xs:element minOccurs="0" name="num2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubtractIntegerNumbersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubtractIntegerNumbersResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

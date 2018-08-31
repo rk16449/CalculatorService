@@ -32,6 +32,12 @@ namespace ChatClient.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/AddIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/AddIntegerNumbersResponse")]
         System.Threading.Tasks.Task<int> AddIntegerNumbersAsync(int num1, int num2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/SubtractIntegerNumbersResponse")]
+        int SubtractIntegerNumbers(int num1, int num2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SubtractIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/SubtractIntegerNumbersResponse")]
+        System.Threading.Tasks.Task<int> SubtractIntegerNumbersAsync(int num1, int num2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace ChatClient.ServiceReference2 {
         
         public System.Threading.Tasks.Task<int> AddIntegerNumbersAsync(int num1, int num2) {
             return base.Channel.AddIntegerNumbersAsync(num1, num2);
+        }
+        
+        public int SubtractIntegerNumbers(int num1, int num2) {
+            return base.Channel.SubtractIntegerNumbers(num1, num2);
+        }
+        
+        public System.Threading.Tasks.Task<int> SubtractIntegerNumbersAsync(int num1, int num2) {
+            return base.Channel.SubtractIntegerNumbersAsync(num1, num2);
         }
     }
 }

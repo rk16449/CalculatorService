@@ -24,6 +24,12 @@
   <wsdl:message name="IChatService_AddIntegerNumbers_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddIntegerNumbersResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatService_SubtractIntegerNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractIntegerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_SubtractIntegerNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractIntegerNumbersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IChatService">
     <wsdl:operation name="GetText">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetText" message="tns:IChatService_GetText_InputMessage" />
@@ -36,6 +42,10 @@
     <wsdl:operation name="AddIntegerNumbers">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/AddIntegerNumbers" message="tns:IChatService_AddIntegerNumbers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatService/AddIntegerNumbersResponse" message="tns:IChatService_AddIntegerNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractIntegerNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/SubtractIntegerNumbers" message="tns:IChatService_SubtractIntegerNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/SubtractIntegerNumbersResponse" message="tns:IChatService_SubtractIntegerNumbers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IChatService" type="tns:IChatService">
@@ -60,6 +70,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddIntegerNumbers">
       <soap:operation soapAction="http://tempuri.org/IChatService/AddIntegerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractIntegerNumbers">
+      <soap:operation soapAction="http://tempuri.org/IChatService/SubtractIntegerNumbers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
