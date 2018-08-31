@@ -41,6 +41,9 @@ namespace ChatClient
                     case "3":
                         DivideService();
                         break;
+                    case "4":
+                        GetRequestService();
+                        break;
                 }
             }
 
@@ -64,6 +67,7 @@ namespace ChatClient
             Console.WriteLine("1. Add two numbers together");
             Console.WriteLine("2. Subtract two numbers");
             Console.WriteLine("3. Divide two numbers");
+            Console.WriteLine("4. Return requests amount");
         }
 
 
@@ -104,6 +108,11 @@ namespace ChatClient
 
             var returnedValue = proxy.AddIntegerNumbers(num1, num2);
             Console.WriteLine("The service replies with: " + returnedValue);
+        }
+
+        static void GetRequestService()
+        {
+            Console.WriteLine("Service has had " + proxy.GetRequests() + " requests so far");
         }
 
         static void SubtractService()

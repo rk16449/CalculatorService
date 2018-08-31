@@ -36,6 +36,12 @@
   <wsdl:message name="IChatService_DivideIntegerNumbers_OutputMessage">
     <wsdl:part name="parameters" element="tns:DivideIntegerNumbersResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatService_GetRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequests" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_GetRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IChatService">
     <wsdl:operation name="GetText">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetText" message="tns:IChatService_GetText_InputMessage" />
@@ -56,6 +62,10 @@
     <wsdl:operation name="DivideIntegerNumbers">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/DivideIntegerNumbers" message="tns:IChatService_DivideIntegerNumbers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IChatService/DivideIntegerNumbersResponse" message="tns:IChatService_DivideIntegerNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetRequests" message="tns:IChatService_GetRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/GetRequestsResponse" message="tns:IChatService_GetRequests_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IChatService" type="tns:IChatService">
@@ -98,6 +108,15 @@
     </wsdl:operation>
     <wsdl:operation name="DivideIntegerNumbers">
       <soap:operation soapAction="http://tempuri.org/IChatService/DivideIntegerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <soap:operation soapAction="http://tempuri.org/IChatService/GetRequests" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

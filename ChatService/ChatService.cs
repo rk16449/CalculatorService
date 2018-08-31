@@ -9,28 +9,40 @@ namespace ChatService
 {
     public class ChatService : IChatService
     {
+        static int requests = 0;
+
         public string GetText(string value)
         {
+            requests++;
             return "Service reads: " + value;
         }
 
         public string GetName(string name)
         {
+            requests++;
             return "Hello " + name + " welcome to the chat service";
+        }
+
+        public int GetRequests()
+        {
+            return requests;
         }
 
         public int AddIntegerNumbers(int num1, int num2)
         {
+            requests++;
             return num1 + num2;
         }
 
         public int SubtractIntegerNumbers(int num1, int num2)
         {
+            requests++;
             return num1 - num2;
         }
 
         public int DivideIntegerNumbers(int num1, int num2)
         {
+            requests++;
             try
             {
                 return (num1 / num2);
