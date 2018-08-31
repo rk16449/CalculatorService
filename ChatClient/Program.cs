@@ -62,29 +62,56 @@ namespace ChatClient
             Console.WriteLine("3. Divide two numbers");
         }
 
-        static void SubtractService()
-        {
 
+        static int ConvertToInt(string val)
+        {
+            try
+            {
+                int.Parse(val);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Could not parse integer!");
+            }
+
+            return int.Parse(val);
+        }
+
+        static int AskNum(string text)
+        {
+            Console.WriteLine(text);
+            int num1 = ConvertToInt(Console.ReadLine());
+            return num1;
         }
 
         static void AdditionService()
         {
             Console.WriteLine("You selected to add 2 numbers");
 
-            try
-            {
-                Console.WriteLine("Number 1: ");
-                int num1 = int.Parse(Console.ReadLine());
-                Console.WriteLine("Number 2: ");
-                int num2 = int.Parse(Console.ReadLine());
-                Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
-                var returnedValue = proxy.AddIntegerNumbers(num1, num2);
-                Console.WriteLine("The service replies with: " + returnedValue);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Invalid integer values");
-            }
+            int num1 = AskNum("Number 1:");
+            int num2 = AskNum("Number 2:");
+
+            OutputServiceSend(num1 , num2);
+
+            var returnedValue = proxy.AddIntegerNumbers(num1, num2);
+            Console.WriteLine("The service replies with: " + returnedValue);
+        }
+
+        static void OutputServiceSend(int num1, int num2)
+        {
+            Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
+        }
+
+        static void SubtractService()
+        {
+            Console.WriteLine("You selected to subtract 2 numbers");
+
+            int num1 = AskNum("Number 1: ");
+            int num2 = AskNum("Number 2: ");
+
+            OutputServiceSend(num1, num2);
+            var returnedValue = proxy.SubtractIntegerNumbers(num1, num2);
+            Console.WriteLine("The service replies with: " + returnedValue);
         }
     }
 }
