@@ -19,5 +19,7 @@ namespace ChatService
         int AddIntegerNumbers(int num1, int num2);
         [OperationContract]
         int SubtractIntegerNumbers(int num1, int num2);
+        [OperationContract]
+        int DivideIntegerNumbers(int num1, int num2);
     }
 }
