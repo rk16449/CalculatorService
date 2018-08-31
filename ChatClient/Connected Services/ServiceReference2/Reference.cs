@@ -44,6 +44,12 @@ namespace ChatClient.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/DivideIntegerNumbers", ReplyAction="http://tempuri.org/IChatService/DivideIntegerNumbersResponse")]
         System.Threading.Tasks.Task<int> DivideIntegerNumbersAsync(int num1, int num2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetRequests", ReplyAction="http://tempuri.org/IChatService/GetRequestsResponse")]
+        int GetRequests();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetRequests", ReplyAction="http://tempuri.org/IChatService/GetRequestsResponse")]
+        System.Threading.Tasks.Task<int> GetRequestsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace ChatClient.ServiceReference2 {
         
         public System.Threading.Tasks.Task<int> DivideIntegerNumbersAsync(int num1, int num2) {
             return base.Channel.DivideIntegerNumbersAsync(num1, num2);
+        }
+        
+        public int GetRequests() {
+            return base.Channel.GetRequests();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRequestsAsync() {
+            return base.Channel.GetRequestsAsync();
         }
     }
 }
