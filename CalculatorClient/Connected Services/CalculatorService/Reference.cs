@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ChatClient.CalculatorService {
+namespace CalculatorClient.CalculatorService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -53,12 +53,12 @@ namespace ChatClient.CalculatorService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICalculatorServiceChannel : ChatClient.CalculatorService.ICalculatorService, System.ServiceModel.IClientChannel {
+    public interface ICalculatorServiceChannel : CalculatorClient.CalculatorService.ICalculatorService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalculatorServiceClient : System.ServiceModel.ClientBase<ChatClient.CalculatorService.ICalculatorService>, ChatClient.CalculatorService.ICalculatorService {
+    public partial class CalculatorServiceClient : System.ServiceModel.ClientBase<CalculatorClient.CalculatorService.ICalculatorService>, CalculatorClient.CalculatorService.ICalculatorService {
         
         public CalculatorServiceClient() {
         }
