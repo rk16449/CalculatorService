@@ -112,8 +112,6 @@ namespace ChatClient
 
             int num1 = AskNum("Number 1: ");
             int num2 = AskNum("Number 2: ");
-
-            // Output what we are going to be sending to the service
             OutputNums(num1, num2);
 
             var returnedValue = proxy.SubtractIntegerNumbers(num1, num2);
@@ -126,7 +124,6 @@ namespace ChatClient
 
             int num1 = AskNum("Number 1: ");
             int num2 = AskNum("Number 2: ");
-
             OutputNums(num1, num2);
 
             try
@@ -137,9 +134,7 @@ namespace ChatClient
             catch(Exception e)
             {
                 Console.WriteLine(e.Message);
-            }
-            
-            
+            } 
         }
     }
 }
