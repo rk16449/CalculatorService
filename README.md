@@ -1,4 +1,4 @@
-# ChatService
+# CalculatorService
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/rk16449/ChatService?branch=master)](https://bettercodehub.com/)
 
