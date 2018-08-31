@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatService", "ChatService\ChatService.csproj", "{38BAA38B-C99D-4125-809A-79530781FD3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorService", "ChatService\CalculatorService.csproj", "{38BAA38B-C99D-4125-809A-79530781FD3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{897BFCDE-2F22-496E-B205-85681C33E377}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorClient", "ChatClient\CalculatorClient.csproj", "{897BFCDE-2F22-496E-B205-85681C33E377}"
 	ProjectSection(ProjectDependencies) = postProject
 		{38BAA38B-C99D-4125-809A-79530781FD3E} = {38BAA38B-C99D-4125-809A-79530781FD3E}
 	EndProjectSection

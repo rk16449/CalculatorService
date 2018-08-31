@@ -5,11 +5,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace ChatService
+namespace CalculatorService
 {
 
     [ServiceContract]
-    public interface IChatService
+    public interface ICalculatorService
     {
         [OperationContract]
         string GetText(string value);

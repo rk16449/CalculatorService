@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculatorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICalculatorService_GetText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetText" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_GetText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_AddIntegerNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIntegerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_AddIntegerNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIntegerNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_SubtractIntegerNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractIntegerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_SubtractIntegerNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractIntegerNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_DivideIntegerNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DivideIntegerNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_DivideIntegerNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideIntegerNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_GetRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequests" />
+  </wsdl:message>
+  <wsdl:message name="ICalculatorService_GetRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICalculatorService">
+    <wsdl:operation name="GetText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/GetText" message="tns:ICalculatorService_GetText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/GetTextResponse" message="tns:ICalculatorService_GetText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/GetName" message="tns:ICalculatorService_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/GetNameResponse" message="tns:ICalculatorService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIntegerNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/AddIntegerNumbers" message="tns:ICalculatorService_AddIntegerNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/AddIntegerNumbersResponse" message="tns:ICalculatorService_AddIntegerNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractIntegerNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/SubtractIntegerNumbers" message="tns:ICalculatorService_SubtractIntegerNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/SubtractIntegerNumbersResponse" message="tns:ICalculatorService_SubtractIntegerNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideIntegerNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/DivideIntegerNumbers" message="tns:ICalculatorService_DivideIntegerNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/DivideIntegerNumbersResponse" message="tns:ICalculatorService_DivideIntegerNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICalculatorService/GetRequests" message="tns:ICalculatorService_GetRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICalculatorService/GetRequestsResponse" message="tns:ICalculatorService_GetRequests_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICalculatorService" type="tns:ICalculatorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetText">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/GetText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIntegerNumbers">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/AddIntegerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractIntegerNumbers">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/SubtractIntegerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideIntegerNumbers">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/DivideIntegerNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <soap:operation soapAction="http://tempuri.org/ICalculatorService/GetRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port name="BasicHttpBinding_ICalculatorService" binding="tns:BasicHttpBinding_ICalculatorService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ChatService/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

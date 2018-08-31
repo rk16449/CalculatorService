@@ -5,9 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace ChatService
+namespace CalculatorService
 {
-    public class ChatService : IChatService
+    public class CalculatorService : ICalculatorService
     {
         static int requests = 0;
 
@@ -20,7 +20,7 @@ namespace ChatService
         public string GetName(string name)
         {
             requests++;
-            return "Hello " + name + " welcome to the chat service";
+            return "Hello " + name + " welcome to the service";
         }
 
         public int GetRequests()

@@ -8,13 +8,13 @@ namespace ChatClient
 {
     class Program
     {
-        static ServiceReference2.ChatServiceClient proxy;
+        static CalculatorService.CalculatorServiceClient proxy;
         static string name;
 
         static void Main(string[] args)
         {
             // Create the new proxy
-            proxy = new ServiceReference2.ChatServiceClient();
+            proxy = new CalculatorService.CalculatorServiceClient();
 
             // Store persons name
             name = AskServiceName();
@@ -77,7 +77,7 @@ namespace ChatClient
             {
                 int.Parse(val);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Could not parse integer!");
             }
@@ -92,57 +92,61 @@ namespace ChatClient
             return num1;
         }
 
-        static void OutputNums(int num1, int num2)
-        {
-            Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
-        }
-
-        static void AdditionService()
-        {
-            Console.WriteLine("You selected to add 2 numbers");
-
-            int num1 = AskNum("Number 1:");
-            int num2 = AskNum("Number 2:");
-
-            OutputNums(num1, num2);
-
-            var returnedValue = proxy.AddIntegerNumbers(num1, num2);
-            Console.WriteLine("The service replies with: " + returnedValue);
-        }
-
         static void GetRequestService()
         {
             Console.WriteLine("Service has had " + proxy.GetRequests() + " requests so far");
         }
 
+        static void ColouredText(string val, ConsoleColor col)
+        {
+            Console.ForegroundColor = col;
+            Console.WriteLine(val);
+            Console.ResetColor();
+        }
+
+        static void AdditionService()
+        {
+            ColouredText("You selected Add Service", ConsoleColor.DarkBlue);
+
+            int num1 = AskNum("Number 1:");
+            int num2 = AskNum("Number 2:");
+
+            ColouredText("The numbers you are sending to the service is: " + num1 + " and " + num2, ConsoleColor.DarkMagenta);
+
+            var returnedValue = proxy.AddIntegerNumbers(num1, num2);
+            ColouredText("The service replies with: " + returnedValue, ConsoleColor.DarkGreen);
+        }
+
         static void SubtractService()
         {
-            Console.WriteLine("You selected to subtract 2 numbers");
+            ColouredText("You selected Subtract Service", ConsoleColor.DarkBlue);
 
             int num1 = AskNum("Number 1: ");
             int num2 = AskNum("Number 2: ");
-            OutputNums(num1, num2);
+
+            ColouredText("The numbers you are sending to the service is: " + num1 + " and " + num2, ConsoleColor.DarkMagenta);
 
             var returnedValue = proxy.SubtractIntegerNumbers(num1, num2);
-            Console.WriteLine("The service replies with: " + returnedValue);
+            ColouredText("The service replies with: " + returnedValue, ConsoleColor.DarkGreen);
         }
 
         static void DivideService()
         {
-            Console.WriteLine("You selected to divide 2 numbers");
+            ColouredText("You selected Divide Service", ConsoleColor.DarkBlue);
 
             int num1 = AskNum("Number 1: ");
             int num2 = AskNum("Number 2: ");
-            OutputNums(num1, num2);
+
+            ColouredText("The numbers you are sending to the service is: " + num1 + " and " + num2, ConsoleColor.DarkMagenta);
 
             try
             {
                 var returnedValue = proxy.DivideIntegerNumbers(num1, num2);
-                Console.WriteLine("The service replies with: " + returnedValue);
+                ColouredText("The service replies with: " + returnedValue, ConsoleColor.DarkGreen);
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                ColouredText(e.Message, ConsoleColor.Red);
             } 
         }
     }
