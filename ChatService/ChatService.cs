@@ -28,5 +28,16 @@ namespace ChatService
         {
             return num1 - num2;
         }
+
+        public int DivideIntegerNumbers(int num1, int num2)
+        {
+            try
+            {
+                return (num1 / num2);
+            }catch(Exception ex)
+            {
+                throw new FaultException("From Service: Error while dividing number");
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace ChatClient
 
             // Store persons name
             name = AskServiceName();
-            
+
             // Continuously ask for what service to do
             while (true)
             {
@@ -30,16 +30,20 @@ namespace ChatClient
                 if (input.Equals("0")) break;
 
                 // Else check values
-                switch (input) {
+                switch (input)
+                {
                     case "1":
                         AdditionService();
                         break;
                     case "2":
                         SubtractService();
                         break;
+                    case "3":
+                        DivideService();
+                        break;
                 }
             }
-                
+
         }
 
         static string AskServiceName()
@@ -84,6 +88,11 @@ namespace ChatClient
             return num1;
         }
 
+        static void OutputNums(int num1, int num2)
+        {
+            Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
+        }
+
         static void AdditionService()
         {
             Console.WriteLine("You selected to add 2 numbers");
@@ -91,15 +100,10 @@ namespace ChatClient
             int num1 = AskNum("Number 1:");
             int num2 = AskNum("Number 2:");
 
-            OutputServiceSend(num1 , num2);
+            OutputNums(num1, num2);
 
             var returnedValue = proxy.AddIntegerNumbers(num1, num2);
             Console.WriteLine("The service replies with: " + returnedValue);
-        }
-
-        static void OutputServiceSend(int num1, int num2)
-        {
-            Console.WriteLine("The numbers you are sending to the service is: " + num1 + " and " + num2);
         }
 
         static void SubtractService()
@@ -109,9 +113,33 @@ namespace ChatClient
             int num1 = AskNum("Number 1: ");
             int num2 = AskNum("Number 2: ");
 
-            OutputServiceSend(num1, num2);
+            // Output what we are going to be sending to the service
+            OutputNums(num1, num2);
+
             var returnedValue = proxy.SubtractIntegerNumbers(num1, num2);
             Console.WriteLine("The service replies with: " + returnedValue);
+        }
+
+        static void DivideService()
+        {
+            Console.WriteLine("You selected to divide 2 numbers");
+
+            int num1 = AskNum("Number 1: ");
+            int num2 = AskNum("Number 2: ");
+
+            OutputNums(num1, num2);
+
+            try
+            {
+                var returnedValue = proxy.DivideIntegerNumbers(num1, num2);
+                Console.WriteLine("The service replies with: " + returnedValue);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+            
         }
     }
 }
