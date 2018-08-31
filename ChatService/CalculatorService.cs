@@ -46,7 +46,7 @@ namespace CalculatorService
             try
             {
                 return (num1 / num2);
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 throw new FaultException("From Service: Error while dividing number");
             }
